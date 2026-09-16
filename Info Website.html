@@ -1,0 +1,283 @@
+<html>
+<head> 
+	<title> Nada und Niels </title> 
+	<style> html {scroll-behavior:smooth}
+			body {background-color:brown;margin:0;} 
+			h1,h2,h3,ul,ol,p,table {padding-left:10px}
+			td,th {text-align:center;color:white;background-color:brown}
+			img {height:200px;width:200px}
+			a {text-decoration:none}
+			section {margin: 0;padding: 20px 0;}
+			#pictures {background-color:#8B2E2E}
+			#clock {background-color:#594039}
+			#gründe {background-color:#6B4740}
+			#playlist {background-color:#3D2025}
+			#overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.3);z-index: 900; opacity: 0;visibility: hidden;transition: opacity 1s ease, visibility 1s ease;}
+			#nachricht {position: fixed;bottom: 80px;right: 20px;background: rgba(110, 60, 55, 0.8);color: white;padding: 20px 25px;border-radius: 18px;box-shadow:0 8px 30px rgba(0,0,0,0.25),0 0 25px rgba(255,255,255,0.35);z-index: 1001;opacity: 0;visibility: hidden;transform: translateY(15px) scale(0.95);transition:opacity 0.6s ease,transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),visibility 0.6s ease;}
+			#herz {position: fixed;bottom: 20px;right: 20px; z-index:2000;font-size:30}
+	</style>
+</head>
+<body>
+<header style="color:white;font-size:60;text-align:center">
+	<h1 style="font-size:40"> <u> Nada und Niels </u> </h1>
+</header> 
+<section style="color:white;background-color:#8B2E2E;text-align:center"> 
+	<h1 style="font-size:40"> <u> Navigation </u> </h1> 
+	<h2> <a href= "#clock" style="color:white"> Wir sind zusammen seit </a> </h2>
+	<h2> <a href= "#gründe" style="color:white"> Warum ich dich liebe </a> </h2>
+	<h2> <a href= "#playlist" style="color:white"> Unsere Playlist </a> </h2>
+</section> 
+<section id="pictures">
+	<img src= Wir.JPG style="width:100%;height:auto;margin-top:0"> 
+</section>
+<section id="clock" style="color:white;text-align:center;font-size:40">
+  <h1 style="font-size:40"> <u> Wir sind schon zusammen seit: </u> </h1>
+    <div id="timer">Lädt...</div>
+    <script>
+        // Startzeit festlegen
+        const start = new Date("2025-10-01T21:16:00");
+        function updateTimer() {
+            const now = new Date();
+            // Vergangene Zeit in Millisekunden
+            const difference = now - start;
+            // In Tage, Stunden, Minuten und Sekunden umrechnen
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / (1000 * 60)) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+            // Anzeige aktualisieren
+            document.getElementById("timer").innerHTML =
+                `${days} Tage, ${hours} Stunden, ${minutes} Minuten und ${seconds} Sekunden`;
+                }
+        	// Jede Sekunde aktualisieren
+        	updateTimer();
+        	setInterval(updateTimer, 1000);
+    </script>
+</section>
+<section id="gründe" style="color:white;text-align:center"> 
+	<h1 style="font-size:40"> <u> Warum ich dich liebe </u> </h1>
+	<p style="font-size:30"> Ich liebe, dass </p>
+	<div id="ergebnis" style="font-size:35;font-weight:bold"> ❤️❤️❤️ </div> 
+	<button onclick="zufall()" style="padding:30px 15px; font-size:25;display:block;margin:auto;background-color:beige;color:red;border-radius:20px;"> Drück Mich!! </button>
+			<script>
+			const elemente= [ 	"du so nett zu allen Menschen bist",
+								"du mir so viel Kraft gibst, auch die schlimmsten Tage zu überstehen",
+								"du dich so für mich und alles, was mit mir zu tun hat freust",
+								"du so liebevolle Worte findest, wenn es mir mal schlecht geht",
+								"du mich zu so einer besseren Person machst",
+								"du niemals judgest",
+								"du deine riesige Vorfreude so unglaublich toll zeigst",
+								"du so ein wundervolles Strahlen in deinen Augen hast",
+								"du mir so liebevoll zuhörst und hilfst, wenn ich es brauche",
+								"deine zuckersüßen Blicke mich so glücklich machen",
+								"du so tolle Bilder machst",
+								"du so eine fürsorgliche Person bist für die Menschen, die dir wichtig sind",
+								"du so liebevoll und nett mit meiner Familie umgehst",
+								"du Respekt vor allen Menschen hast",
+								"du eine Freundlichkeit gegenüber allen Menschen besitzt",
+								"deine Art, dich zu freuen so unglaublich süß ist",
+								"du mich verstehst, auch wenn ich manchmal sehr kompliziert bin",
+								"dein Wille, nie aufzugeben so stark ist",
+								"du die Welt jeden Tag ein kleines bisschen besser machst",
+								"du es überhaupt aushäkst und damit lebst; dass niemand von uns wissen darf",
+								"ich so eine innere Ruhr fühle, immer, wenn ich Zeit mit dir verbringe",
+								"du deine Art hast, mich zu trösten, wenn ich mal traurig bin",
+								"ich mich in deinen Armen so sicher fühle, wie nirgendwo anders",
+								"du immer höflich bleibst, auch wenn es dein gegenüber nicht zu dir ist",
+								"du ohne Schminke oer gemachte Haare so unglaublich wunderschön aussiehst",
+								"deine Liebe für Tiere mich inspiriert",
+								"du so coole Hobbys hast",
+								"die Art so unfassbar wundervoll ist, wie du mir deine Liebe zeigst",
+								"du alle und jeden akzeptierst, genau so wie sie sind",
+								"deine Augen diese Farbe haben, wenn sie angelecuhtet werden",
+								"du mir immer verscuhst zu helfen, so gut wie du es kannst",
+								"du alles mit mir versuchst zu teilen, selbst, wenn es schwer ist",
+								"ich dir alles anvertrauen kann, was mir auf dem Herzen liegt",
+								"du die einzige Person bist, mit der ich nach einem harten Tag reden wollen würde",
+								"unsere Konversationen selbst nach Stunden nicht enden könnten",
+								"du mich immer motivierst, das richtige zu tun",
+								"du mir immer die collsten, spannendsten, lustigsten Geschichten erzählst",
+								"du immer deine Meinung sagst und dazu stehst",
+								"ich deine Liebe immer spüren kann, wohin ich auch gehe",
+								"du überall in meinem Zimmer bist￼, wo man auch hinschaut",
+								"wir, egal wo und mit wem, immer einen wunderschönen Tag haben können",
+								"du mir immer die wundervollsten Komplimente gibst",
+								"deine Geschenke immr so süß gestaltet sind",
+								"du mich verstehst, wie niemand anders es würde",
+								"dein wundervolles Lächeln diese kleinen Grübchen hat",
+								"du mir jeden Tag das Gefühl gibst, dass ich wichtig bin",
+								"deine Haare so unfassbar wunderhübsch aussehen",
+								"wir so connected sind ;-)",
+								"du immer versuchst, mich zu einer besseren Person zu machen",
+								"du mir geholfen hast, auch mich selbst un meine Gefühle zu verstehen",
+								"du mir immer so süß schreibst",
+								"deine Handschrift so wundervoll aussieht",
+								"du versuchst, dass ich mehr sozialisiere",
+								"du immer deine ehrliche Meinung sagst",
+								"du es immer ansprichst, wenn dich etwas stört",
+								"du mich näher an die Religion gebracht hast",
+								"du dich immer so um mich sorgst",
+								"du mich immer zum lachen bringen kannst",
+								"ich so ein fridliches Gefühl fühle, wenn wir zusammen Zeit verbringen",
+								"du so gute Lösungen findest",
+								"du so gut mit deinen EMotionen umgehst und sie zeigst",
+								"du so wundervoll und fürsorglich mit den Emotionen anderer umgehst",
+								"wir so verliebt, vertrauensvoll, intim, lustig und ernst gleichzeitig sein können",
+								"wir uns so gut ergänzen",
+								"du dir immer so viel Mühe gibst, dass es zwischen uns klappt",
+								"du immer deine Hilfe anbietest",
+								"ich bei jedem Liebeslied an dich denken muss",
+								"du dir immer die Zeit nimmst, mit mir zu schreiben",
+								"deine snaps immer sooooo cool sind",
+								"du über 3 Jahre lang nach mir gesucht hast",
+								"du solche tollen Ziele und Träume hast",
+								"du immer sooo wundervoll riechst",
+								"dein Herz so gut ist, nicht nur gegenüber mir",
+								"du Dinge an mir bemerkst, die nicht einmal ich bemerke",
+								"du mich immer so süß und unschuldig anschaust",
+								"du selbst im Urlaub an mich denken musst",
+								"wir gefühlt tagelag telefonieren könnten",
+								"du mich so sanft und liebevoll küsst",
+								"deine Nase manchmal so süß rot wird",
+								"du immer so in mich vertraust, manchal mehr, als ich selbst",
+								"ich bei dir ich selbst sein kann und niemand anders sein muss",
+								"du bei mir dein wirkliches, wundervolles Ich zeigst",
+								"dein Musikgeschmack so cool ist",
+								"meine tiefsten Geheimnisse sicher bei dir sind",
+								"ich dich in allem sehe, was um mich herum ist",
+								"du mich immer unterstützt, bei allem was ich mache",
+								"wir uns vermissen könnten, selbst wenn wir uns vor 5 Minuten gesehe haben",
+								"du immer für einen Witz gut bist",
+								"du loyal bleiben würdest, was auch immer passiert",
+								"du mich immer zum glücklochsten Menschen auf der Welt machst <3",
+								"wir uns einfach so richtig zusammen anfühlen",
+								"du immer wachbleibst, bis ich zu Hause bin, egal, wie lange ich weg bin",
+								"wir einfach so echt miteinander sind",
+								"du gleichzeitig auch meine beste Freundin bist",
+								"ich mir unsere Zukunft so gut vorstellen kann",
+								"deine Haare, egal ob glatt, lockig oder wellig, immer so wunderschön aussehen",
+								"wir uns selbst in einer Gruppe wie automatisch anziehen",
+								"du immer so begeistert über alles bist, was ich mit dir teile",
+								"dass du einfach du bist, weil du so perfekt bist, genau so wie du bist <3"];
+        	function zufall() {
+            const zufallszahl = Math.floor(Math.random() * elemente.length);
+            document.getElementById("ergebnis").textContent = elemente[zufallszahl]; }
+		</script>
+</section>
+<section id="playlist" style="text-align:center;color:white">
+	<h1 style="font-size:40"> <u> Unsere Playlist </u> </h1> 
+	<table border= "2" style="margin:0 auto;background-color:black;border-color:black;font-weight:bold">
+		<tr>
+			<td style="background-color:#30443A"> <a href=https://open.spotify.com/intl-de/track/1BYZxKSf0aTxp8ZFoeyM3d style="color:#C94B2C">
+				<img src= https://i.scdn.co/image/ab67616d00001e02eb13fbc012815ea6e834e842> 
+				<p> Girl in red </p>
+				<p> We fell in love in October </p>
+				<p> Der Monat, wo wir zusammen gekommen sind </p> </a>
+			</td>
+			<td style="background-color:white"> <a href=https://open.spotify.com/intl-de/track/50x1Ic8CaXkYNvjmxe3WXy style="color:black"> 
+				<img src= https://i.scdn.co/image/ab67616d00001e021bb5dc21200bfc56d8f7ef41>
+				<p> New West </p>
+				<p> Those Eyes </p>
+				<p> Der erste Song, der dich an mich erinnert hat </p> </a>
+			</td>
+		</tr> 
+		<tr>
+			<td style="background-color:pink"> <a href=https://open.spotify.com/intl-de/track/3jfZ9M23l0L7RxzYMTgBTv style="color:blue">
+				<img src= https://i.scdn.co/image/ab67616d00001e025448a3dfe8528453a3686fd6>
+				<p> Joy Again </p>
+				<p> Looking out for You </p>
+				<p> Das erste Liebslied, das mir deinen Vibe gegeben hat </p> </a>
+			</td>
+			<td style="background-color:darkred"> <a href=https://open.spotify.com/intl-de/track/4N8idxy0W2GDaEosAwPOMg style="color:yellow"> 
+				<img src=https://i.scdn.co/image/ab67616d00001e02fa10fcd519ad13a7512805ca>
+				<p> Fontaines D.C. </p>
+				<p> I Love You </p>
+				<p> Eins deiner Lieblings-Liebeslieder </p> </a>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:white"> <a href=https://open.spotify.com/intl-de/track/1yslmgUcM2AOkOPS4sl3QV style="color:darkblue">
+				<img src= https://m.media-amazon.com/images/I/71nxRqKGA8L._SX522_.jpg>
+				<p> Queen </p>
+				<p> Bohemian Rhapsody </p> 
+				<p> Unsere erste Konversation über Musik </p> </a>
+			</td>
+			<td style="background-color:yellow"> <a href=https://open.spotify.com/intl-de/track/6RtPijgfPKROxEzTHNRiDp style="color:black"> 
+				<img src= https://i.scdn.co/image/ab67616d00001e02b1c2609c8b258ad621d4057b>
+				<p> Magic! </p>
+				<p> Rude </p>
+				<p> Ich stelle mir immer vor, bei deinem Vater um deine Hand anzuhalten </p> </a>
+			</td>
+		</tr>
+		<tr> 
+			<td> <a href=https://open.spotify.com/intl-de/track/0tToYcQCuNtUDBCyf8H24I style="color:white"> 
+				<img src= https://i.scdn.co/image/ab67616d00001e02967aff4dbcbd88c22a0e80f1>
+				<p> 12HB </p>
+				<p> Love is ever </p>
+				<p> Das Lied in deiner ersten Story über mich </p> </a>
+			</td>
+			<td style="background-color:pink"> <a href=https://open.spotify.com/intl-de/track/0eAuGrXyGFYwur9ARUe7LJ style="color:white">
+				<img src= https://i.scdn.co/image/ab67616d00001e022c1f34ecc1929fb59908aad1>
+				<p> Malcom Todd </p>
+				<p> Earrings </p>
+				<p> Du hast mich dazu gebracht, dieses Lied zu lieben wie du </p> </a>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#444444"> <a href=https://open.spotify.com/intl-de/track/6DkLEec1mdVxpUMEvjVTJ0 style="color:pink"> 
+				<img src= https://i.scdn.co/image/ab67616d00001e026236778a208a15eb71079601>
+				<p> The Smiths </p>
+				<p> There is a light that never goes out </p>
+				<p> Du hast mir gesagt, du verbindest mich mit The Smiths </p> </a>
+			</td>
+			<td style="background-color:white"> <a href=https://open.spotify.com/intl-de/track/10nyNJ6zNy2YVYLrcwLccB style="color:black">
+				<img src= https://i.scdn.co/image/ab67616d00001e02c8b444df094279e70d0ed856>
+				<p> Radiohead </p> 
+				<p> No Surprises </p>
+				<p> Das erste Lied, das ich dir auf der Gitarre beigebracht habe </p> </a>
+			</td>
+		</tr> 	
+		<tr>
+			<th colspan="2"> <a href= https://open.spotify.com/playlist/70FjKmI81y8p46D5xRcmmf?si=UafjdW6hSny8lR1sDjbNOA&utm_source=copy-link&pi=vg23uIt3Qjevz&pt=8f814d52ae574d6ba82676e4554d6ae3   	style="color:white;font-size:30px">Und noch viele mehr... </a> </th>
+		</tr>
+	</table> 
+</section> 
+<herz>
+    <div id="overlay" onclick="schliessen()"></div>
+    <div id="herz" onclick="nachricht()">❤️</div>
+    <div id="nachricht"></div>
+    <script>
+        const nachrichten = [
+            "Ich vermisse dich 🥹",
+            "Ich liebe dich bis zum Mond und zurück 🌑",
+            "Du bist das Beste und Wundervollste, was mir jemals passiert ist 🌹",
+            "Ich denke gerade an dich",
+            "Du bist wunderhübsch",
+            "Lächle mal, dein Lächeln ist wunderschön",
+            "Du lässt mein Herz springen, wenn ich an dich denken muss 💗"
+        ];
+        function nachricht() {
+
+            const zufall = Math.floor(Math.random() * nachrichten.length);
+            document.getElementById("nachricht").innerHTML = nachrichten[zufall];
+
+            document.getElementById("nachricht").style.opacity = "1";
+            document.getElementById("nachricht").style.visibility = "visible";
+            document.getElementById("nachricht").style.transform = "translateY(0)";
+
+            document.getElementById("overlay").style.opacity = "1";
+            document.getElementById("overlay").style.visibility = "visible";
+        }
+        function schliessen() {
+
+            document.getElementById("nachricht").style.opacity = "0";
+            document.getElementById("nachricht").style.visibility = "hidden";
+            document.getElementById("nachricht").style.transform = "translateY(10px)";
+
+            document.getElementById("overlay").style.opacity = "0";
+            document.getElementById("overlay").style.visibility = "hidden";
+        }
+    </script>
+</herz>
+</body> 
+</html>
